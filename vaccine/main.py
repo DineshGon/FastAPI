@@ -5,14 +5,14 @@ from vaccine.database import SessionLocal
 from . import schemas, models
 from .database import engine, SessionLocal, get_db
 from sqlalchemy.orm import Session
-from .routers import vaccine
+from .routers import vaccineRouter
 
 
 app=FastAPI()
 
 models.Base.metadata.create_all(engine)
 #with this you can write main.py in seperate files
-app.include_router(vaccine.router)
+app.include_router(vaccineRouter.router)
 
 # def get_db():
 #     db =SessionLocal() # from the db
