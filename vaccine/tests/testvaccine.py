@@ -1,12 +1,14 @@
 from fastapi.testclient import TestClient
 import json
 
-import os
+from main import app
+
+
 # print(os.path.abspath(__file__))
 # print(__file__)
-import sys
+# import sys
+# import os
 # sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from ..main import app
 
 # from vaccine.routers.vaccineRouter import router
 

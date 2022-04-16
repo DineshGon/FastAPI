@@ -1,19 +1,27 @@
 from fastapi import Depends, FastAPI, status, Response, HTTPException
-from main import Vaccine
+# from rootmain import Vaccine
 
 from vaccine.database import SessionLocal
-from . import schemas, models
-from .database import engine, SessionLocal, get_db
+from vaccine import schemas, models
+from vaccine.database import engine, SessionLocal, get_db
 from sqlalchemy.orm import Session
-from .routers import vaccineRouter
-
+from vaccine.routers import vaccineRouter
 
 app=FastAPI()
 
+"""D3S
+Below line creates a table in DB
+Whenever we are running the server we are going to create all the models into the db.
+we can simply say creating the tables. this is happening everytime.
+if table is there then its not going to do anything. if table is not there it will going to create it 
+""" 
 models.Base.metadata.create_all(engine)
+##D3E
+
 #with this you can write main.py in seperate files
 app.include_router(vaccineRouter.router)
 
+#-----------------------------------------------------------------------------------------------
 # def get_db():
 #     db =SessionLocal() # from the db
 #     try:

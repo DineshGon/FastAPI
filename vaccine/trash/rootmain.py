@@ -1,3 +1,4 @@
+'''
 from operator import ipow
 from sys import int_info
 from typing import Optional
@@ -42,3 +43,5 @@ def create_appointments(request: Vaccine):
 # To chane th eport number in debugging
 # if __name__ == "__main__":
 #     uvicorn.run(app,host="127.0.0.1", port= '9000')
+
+'''

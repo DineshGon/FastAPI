@@ -3,17 +3,17 @@ from fastapi import Depends, APIRouter, Response, HTTPException, status
 from sqlalchemy.orm import Session
 
 
-def get_all(db):
+def get_all(db:Session):
     allvaccines = db.query(models.Vaccine).all()
     return allvaccines
 
-def create_vaccine(request: schemas.Vaccine,db):
-      # db: Session = Depends(get_db) convert session into pydantic thing
-   new_vac = models.Vaccine(startTime= request.startTime, endTime = request.endTime) #vaccineId = request.vaccineId, 
-   db.add(new_vac)
-   db.commit()
-   db.refresh(new_vac)
-   return new_vac
+def create_vaccine(request: schemas.Vaccine, db : Session ):
+    
+   new_vac = models.Vaccine(startTime= request.startTime, endTime = request.endTime)  #this are  going to have starttime and endTime coming from the request 
+   db.add(new_vac) # we are ading new_vac to the db 
+   db.commit()  # commit and execute it 
+   db.refresh(new_vac) #refresh the db with the new_vac 
+   return new_vac # return newly created record (new_vac)
 
 def delete_vaccine(vaccineId:int, db: Session):
      # db.query(models.Vaccine).filter(models.Vaccine.vaccineId == vaccineId).delete(synchronize_session= False)
