@@ -5,25 +5,26 @@ from sqlalchemy.orm import sessionmaker
 ##D1S
 ##.DB Connection using sqlalchemy
 
-#creating the path
-SQLALCHEMY_DATABASE_URL = "sqlite:///./appointments.db"
+# creating the path
+SQLALCHEMY_DATABASE_URL = "sqlite:///./appointments1.db"
 
-#creating the engine
+# creating the engine
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
 
-#creating the session local
+# creating the session local
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-#creating the base
+# creating the base
 Base = declarative_base()
+
 
 ##D1E
 
 def get_db():
-    db =SessionLocal() # its from the database
+    db = SessionLocal()  # its from the database
     try:
         yield db
     finally:
-        db.close() #if everything is done close the db
+        db.close()  # if everything is done close the db
