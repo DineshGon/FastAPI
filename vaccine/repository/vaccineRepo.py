@@ -38,7 +38,7 @@ def update_vaccine(vaccineId: int, request: schemas.Vaccine, db: Session):
     # if there is id give me the first one 
     if not vacbyid.first():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Vaccine id  {vaccineId} not found")
-
+    print(request.dict())
     vacbyid.update(request.dict())
     # vacbyid.update({'startTime':request.startTime,'endTime' :request.endTime})
     db.commit()

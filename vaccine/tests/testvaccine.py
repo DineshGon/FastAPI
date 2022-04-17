@@ -33,10 +33,12 @@ def test_retrieve_all_appointments():
 
 
 def test_update_appointment():
-    data = {"vaccineId": 1, "startTime": '1:10', 'endTime': '2:20'}
+    data = {"startTime": '1:10', 'endTime': '2:20'}
     response = client.put('devsecops/vaccine/1', json.dumps(data))
+    print(response.json(), "****************")
+    print(response, "****************")
     assert response.status_code == 202
-    assert response.json()['startTime'] == '1:10'
+    assert response.json() == 'updated'
 
 
 def test_delete_appointment():
