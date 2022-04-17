@@ -6,6 +6,7 @@ Its a request model from pydantic model
 
 """
 
+
 class Vaccine(BaseModel):
     # vaccineId: int
     startTime: str

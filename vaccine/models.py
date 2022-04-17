@@ -2,7 +2,7 @@ from ast import Index
 from vaccine.database import Base
 from sqlalchemy import Column, Integer, PrimaryKeyConstraint, String
 
-#ref https://fastapi.tiangolo.com/tutorial/body/
+# ref https://fastapi.tiangolo.com/tutorial/body/
 
 '''
 ##D2S #DataBase Entity. Mapping our codebase to DB
@@ -11,8 +11,10 @@ from sqlalchemy import Column, Integer, PrimaryKeyConstraint, String
 #Vaccine is extended to the Base of db
 ##D2E
 '''
+
+
 class Vaccine(Base):
     __tablename__ = 'vaccines'
-    vaccineId = Column(Integer, primary_key = True, index=True)
+    vaccineId = Column(Integer, primary_key=True, index=True)
     startTime = Column(String)
-    endTime   = Column(String)
+    endTime = Column(String)
