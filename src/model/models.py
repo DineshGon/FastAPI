@@ -1,5 +1,5 @@
 from ast import Index
-from vaccine.database import Base
+from src.database import Base
 from sqlalchemy import Column, Integer, PrimaryKeyConstraint, String
 
 # ref https://fastapi.tiangolo.com/tutorial/body/

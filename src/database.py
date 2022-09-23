@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 ##.DB Connection using sqlalchemy
 
 # creating the path
-SQLALCHEMY_DATABASE_URL = "sqlite:///./appointments1.db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///tests/appointments1.db"
 
 # creating the engine
 engine = create_engine(

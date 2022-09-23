@@ -1,11 +1,12 @@
 from fastapi import Depends, FastAPI, status, Response, HTTPException
 # from rootmain import Vaccine
 
-from vaccine.database import SessionLocal
-from vaccine import schemas, models
-from vaccine.database import engine, SessionLocal, get_db
+from src.database import SessionLocal
+from src.repository import schemas
+from src.database import engine, SessionLocal, get_db
 from sqlalchemy.orm import Session
-from vaccine.routers import vaccineRouter
+from src.model import models
+from src.routers import vaccineRouter
 
 app = FastAPI()
 

@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 import json
 
-from vaccine.main import app
+from src.main import app
 
 # Ref https://fastapi.tiangolo.com/tutorial/testing/
 

@@ -1,8 +1,9 @@
 from fastapi import Depends, APIRouter, Response, HTTPException, status
 from sqlalchemy.orm import Session
-from vaccine import models, database, schemas
+from src import database
+from src.model import models
 
-from vaccine.repository import vaccineRepo
+from src.repository import schemas, vaccineRepo
 
 # Ref https://fastapi.tiangolo.com/tutorial/bigger-applications/?h=bigger
 
